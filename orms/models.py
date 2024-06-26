@@ -2,7 +2,7 @@ from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, declared_attr
 from sqlalchemy import DateTime, func, Text, BigInteger
 
-engine = create_async_engine("postgresql+asyncpg://postgres:root@localhost:5432/localtest", echo=True)
+engine = create_async_engine("postgresql+asyncpg://postgres:root@localhost:5432/localtest")
 session_factory = async_sessionmaker(bind=engine, expire_on_commit=False, autoflush=True)
 
 
