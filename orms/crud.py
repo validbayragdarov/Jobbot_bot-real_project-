@@ -12,15 +12,8 @@ async def create_user(userr: dict):
             await session.flush()
             await session.commit()
         except Exception as ex:
-            raise ex
+            print(ex)
 
 
-user = {"id": 1, "telegram_id": 135431654}
 
 
-async def main():
-    await create_tables()
-    await create_user(user)
-
-
-asyncio.run(main())

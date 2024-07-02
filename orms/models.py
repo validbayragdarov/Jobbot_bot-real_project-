@@ -15,7 +15,7 @@ class Base(DeclarativeBase):
 
     id: Mapped[int] = mapped_column(primary_key=True)
     username: Mapped[str] = mapped_column(nullable=True)
-    telegram_id: Mapped[int] = mapped_column(BigInteger, nullable=True)
+    telegram_id: Mapped[int] = mapped_column(BigInteger, nullable=True, unique=True)
 
 
 class UserData(Base):
