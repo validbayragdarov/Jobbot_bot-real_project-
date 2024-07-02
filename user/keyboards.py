@@ -17,8 +17,9 @@ async def order_cv_kb():
 async def send_cv_kb():
     order_cv = InlineKeyboardButton(text="📄 Заказать CV", callback_data="order_cv")
     send_cv = InlineKeyboardButton(text="📄 Отправить CV", callback_data="send_cv")
+    new_cv = InlineKeyboardButton(text="Создать CV", url="https://europass.europa.eu/en")
 
-    return InlineKeyboardMarkup(inline_keyboard=[[send_cv, order_cv], [back_btn]])
+    return InlineKeyboardMarkup(inline_keyboard=[[send_cv, order_cv], [new_cv], [back_btn]])
 
 
 async def start_kb():

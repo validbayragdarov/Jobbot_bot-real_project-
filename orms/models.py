@@ -32,8 +32,9 @@ class UserInfo(Base):
 
 
 class Application(Base):
-    cv_photo: Mapped[str] = mapped_column(Text, nullable=True)
+    cv_photo: Mapped[str] = mapped_column(Text, nullable=True, unique=True)
     text: Mapped[str] = mapped_column(Text, nullable=True)
+    telegram_id: Mapped[int] = mapped_column(BigInteger, nullable=False, unique=False)
 
 
 async def create_tables():
